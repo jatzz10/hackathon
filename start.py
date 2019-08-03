@@ -1,11 +1,12 @@
 from flask import Flask, request, render_template
 from plot_function import city
+
 app = Flask(__name__)
 
-@app.route('/admin', methods = ["POST", "GET"])
+@app.route('/admin')
 def admin():
+  return render_template('index.html')
 
-    return render_template('index.html')
 @app.route('/user')
 def index():
   return render_template('index.html')
