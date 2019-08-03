@@ -1,10 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
+
 app = Flask(__name__)
 
-# @app.route('/')
-# def hello_world():
-#   return 'Hello, World!'
+@app.route('/admin')
+def admin():
+  return render_template('index.html')
 
-@app.route('/index')
+@app.route('/user')
 def index():
   return render_template('index.html')
+
+if __name__ == '__main__':
+  app.run(debug=True)
