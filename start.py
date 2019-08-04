@@ -18,7 +18,7 @@ def user():
     lis = return_neighbors(query)
     if lis.empty:
       s = "Something is fishy!! The user Id doesn't exist."
-      return s.to_html()
+      return s
     else:
       return lis.to_html()
   else:
