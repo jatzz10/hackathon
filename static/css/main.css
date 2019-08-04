@@ -1,3 +1,45 @@
+html,body,.container {
+  height:100%;
+}
+
+section{
+  .container {
+    padding: 50px;
+    .row {
+      min-height:100%;
+      padding: 50px;
+      .col {
+        text-align: center;
+        padding: 50px;
+      }
+    }
+  }
+}
+
+section.home {
+  /*background-image: linear-gradient(#ffafbd, #ffc3a0): */
+  .container {
+    .row {
+      .col {
+        min-height: 700px;
+      }
+      .thor-left {
+        text-align: left;
+        background-color: green !important;
+      }
+      .hulk-right {
+        text-align: right;
+        background-color: blue;
+      }
+    }
+  }
+}
+
 .insights-class {
   font-size: inherit;
+}
+
+.size {
+  height: 620px;
+  width: 1000px;
 }
