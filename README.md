@@ -1,7 +1,11 @@
 # hackathon
 Skillenza hackathon
 
+before running the web app please set up dependencies. 
+You can isntall the dependencies by running command pip install -r requires.txt
+
 INSTRUCTION TO RUN THE WEB APP:
+
 1. Run start.py file which will run the server on localhost.
 2. As soon as localhost, please enter url as http://localhost:5000/home
 3. As soon as you hit /home api you will see two options 
