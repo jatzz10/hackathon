@@ -6,7 +6,7 @@ You can install the dependencies by running command pip install -r requires.txt
 
 INSTRUCTION TO RUN THE WEB APP:
 
-1. Run start.py file which will run the server on localhost  command(python run start.py).
+1. Run start.py file which will run the server on localhost  command(python start.py).
 2. As soon as localhost starts, please enter url as http://localhost:5000/home
 3. As soon as you hit /home api you will see two options 
      1) Insights for company
