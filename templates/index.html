@@ -3,24 +3,48 @@
   <head>
     <title>Insights</title>
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
-    <script type="text/javascript" src="data.json"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body>
-    <section>
-      <!-- <h1>This is a chart</h1><br> -->
-      <!-- <h2>Get Insights</h2>
-      <form>
-        <select class="browser-default custom-select insights-class">
-          <option selected>Insights</option>
-          <option value="1">Cities vs Revenue Generated</option>
-          <option value="2">Most popular products</option>
-          <option value="3">Monthly products sold</option>
-        </select>
-      </form>
-      <br>
-      <h3 class="insights-result"></h3> -->
-      <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <section class="home">
+      <div class="container">
+        <!-- <br><br><br><br><br><br><br> -->
+        <div class="row my-auto">
+          <div class="col col-12 col-sm-6 justify-content-center align-self-center thor-left">Insights for the company</div>
+          <div class="col col-12 col-sm-6 justify-content-center align-self-center hulk-right">Get recommendations for products as a user</div>
+        </div>
+      </div>
+
     </section>
+    <section class="admin">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <br><br>
+            <h2>Get Insights</h2>
+            <form>
+              <select class="browser-default custom-select insights-class">
+                <option selected>Insights</option>
+                <option value="1">City having highest transactions</option>
+                <option value="2">Most popular products</option>
+                <option value="3">Product quantity sold per city of each category</option>
+                <option value="4">Heatmap of all variables in data</option>
+                <option value="5">Hourly frequency of transactions of products</option>
+                <option value="6">Total revenue generated in each month of fiscal year</option>
+                <option value="7">Trend for year 2018</option>
+                <option value="8">Trend of subscriptions for year 2018</option>
+                <option value="9">Total count of subscriptions for each product_id</option>
+              </select>
+            </form>
+            <br><br>
+            <h3 class="insights-result"></h3>
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="user"></section>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
