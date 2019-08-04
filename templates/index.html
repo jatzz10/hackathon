@@ -8,17 +8,17 @@
   <body>
     <section class="home">
       <div class="container">
-        <!-- <br><br><br><br><br><br><br> -->
+        <br><br><br><br><br><br><br><br><br><br>
         <div class="row my-auto">
-          <div class="col col-12 col-sm-6 justify-content-center align-self-center thor-left">Insights for the company</div>
-          <div class="col col-12 col-sm-6 justify-content-center align-self-center hulk-right">Get recommendations for products as a user</div>
+          <div class="col col-12 col-sm-6 justify-content-center align-self-center thor-left"><a class="lol" href="/admin"><h1>Insights for the company</h1></a></div>
+          <div class="col col-12 col-sm-6 justify-content-center align-self-center hulk-right"><a class="lol" href="/user"><h1>Get recommendations for products as a user</h1></a></div>
         </div>
       </div>
     </section>
     <section class="admin">
       <div class="container">
         <div class="row">
-          <div class="col">
+          <div class="col col-8">
             <br><br>
             <h2>Get Insights</h2>
             <form>
@@ -39,10 +39,27 @@
             <h3 class="insights-result"></h3>
             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
           </div>
+          <div class="col col-4"><a class="lol" href="/home">Home</a></div>
         </div>
       </div>
     </section>
-    <section class="user"></section>
+    <section class="user">
+      <div class="container">
+        <div class="row">
+          <div class="col col-8">
+            <br><br><br><br>
+            <h1>Search</h1>
+            <br><br>
+            <form method="POST">
+              <input type="number" name="search" class="search-box">
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <br><br><br><br>
+          <div class="col col-4"><a class="lol" href="/home">Home</a></div>
+        </div>
+      </div>
+    </section>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

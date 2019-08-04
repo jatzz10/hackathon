@@ -43,21 +43,13 @@ $(function() {
     $('.user').hide();
   }
 
-  $('.thor-left').on('click', function () {
-    window.location.href = '/admin';
-  });
-
-  $('.hulk-right').on('click', function () {
-    window.location.href = '/user';
-  });
-
   $('select').change(function() {
     var result = $('.insights-result');
     var value = $('.insights-class option:selected').val();
     if (value === '1') {
       var d1 = [1120112, 1120224, 1120560, 1120336, 1120672, 1120784, 1120448];
       var d2 = [4877866, 2647335, 854047, 732380, 300091, 250875, 16385];
-      displayChart(d1,d2, 'pie', 'City having highest transactions, y');
+      displayChart(d1,d2, 'column', 'City having highest transactions', 'Transactions');
     }
     if (value === '2') {
       $('#chartContainer').html('<img class="size" src="/static/img/category.png">')
