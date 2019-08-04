@@ -2,7 +2,7 @@ html,body,.container {
   height:100%;
 }
 
-section{
+section.admin, section.user {
   .container {
     padding: 50px;
     .row {
@@ -16,8 +16,22 @@ section{
   }
 }
 
+section.user {
+  background-color: #A2AEE3;
+  min-height: 300px !important;
+  .container {
+    .row {
+      .col {
+        min-height: 500px !important;
+      }
+    }
+  }
+}
+
 section.home {
-  /*background-image: linear-gradient(#ffafbd, #ffc3a0): */
+  min-height: 100%; 
+  min-width: 100%;
+  background: -webkit-linear-gradient(left, rgb(247, 141, 161) 0%, rgb(254, 155, 140) 100%);
   .container {
     .row {
       .col {
@@ -42,4 +56,19 @@ section.home {
 .size {
   height: 620px;
   width: 1000px;
+}
+
+.lol h1 {
+  color: black !important;
+}
+.col-4 {
+  padding-top: 100px;
+}
+
+input.search-box {
+  width: 700px;
+  height: 50px;
+  border-top: none;
+  
+  box-shadow: 8px 5px 5px grey !important;
 }

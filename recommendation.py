@@ -81,8 +81,11 @@ def recommendation():
 
 
 def return_neighbors(id):
-    df = pd.read_csv("/home/balaji/Downloads/temp_bq_data/final_neighbors.csv")
-    df = df[df["customer_id"]==id]
+    #print(int(id)+10)
+    df = pd.read_csv("final_neighbors.csv")
+    #print(df.head(5))
+    df = df.ix[df["customer_id"]==int(id), 0:5]
+
     return  df
 
 
