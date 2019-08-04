@@ -1,40 +1,87 @@
-// window.onload = function () {
-//   var chart = new CanvasJS.Chart("chartContainer", {
-//     animationEnabled: true,
-//     exportEnabled: true,
-//     theme: "light1", // "light1", "light2", "dark1", "dark2"
-//     title:{
-//       text: "Simple Column Chart with Index Labels"
-//     },
-//     data: [{
-//       type: "column", //change type to bar, line, area, pie, etc
-//       //indexLabel: "{y}", //Shows y value on all Data Points
-//       indexLabelFontColor: "#5A5757",
-//       indexLabelPlacement: "outside",
-//       dataPoints: [
-//         { x: 10, y: 71 },
-//         { x: 20, y: 55 },
-//         { x: 30, y: 50 },
-//         { x: 40, y: 65 },
-//         { x: 50, y: 92, indexLabel: "Highest" },
-//         { x: 60, y: 68 },
-//         { x: 70, y: 38 },
-//         { x: 80, y: 71 },
-//         { x: 90, y: 54 },
-//         { x: 100, y: 60 },
-//         { x: 110, y: 36 },
-//         { x: 120, y: 49 },
-//         { x: 130, y: 21, indexLabel: "Lowest" }
-//       ]
-//     }]
-//   });
-//   chart.render();
-// }
+function displayChart(d1, d2, chartType, chartTitle, y) {
+  var dataPoints = [];
+  var chart = new CanvasJS.Chart('chartContainer', {
+    animationEnabled: true,
+    theme: 'light2',
+    title: {
+      text: chartTitle
+    },
+    axisY: {
+      title: y,
+      titleFontSize: 24
+    },
+    data: [{
+      type: chartType,
+      yValueFormatString: '#,### Units',
+      dataPoints: dataPoints
+    }]
+  });
+
+  for (var i = 0; i < d1.length; i++) {
+    dataPoints.push({
+      x: d1[i],
+      y: d2[i]
+    });
+  }
+  chart.render();
+}
 
 $(function() {
+  if (window.location.pathname === '/admin') {
+    $('.admin').show();
+    $('.user').hide();
+    $('.home').hide();
+  }
+  else if (window.location.pathname === '/user') {
+    $('.admin').hide();
+    $('.user').show();
+    $('.home').hide();
+  }
+  else {
+    $('.home').show();
+    $('.admin').hide();
+    $('.user').hide();
+  }
+
+  $('.thor-left').on('click', function () {
+    window.location.href = '/admin';
+  });
+
+  $('.hulk-right').on('click', function () {
+    window.location.href = '/user';
+  });
+
   $('select').change(function() {
     var result = $('.insights-result');
-    var value = $(".insights-class option:selected").val();
-    result.text(value);
-  });
+    var value = $('.insights-class option:selected').val();
+    if (value === '1') {
+      var d1 = [1120112, 1120224, 1120560, 1120336, 1120672, 1120784, 1120448];
+      var d2 = [4877866, 2647335, 854047, 732380, 300091, 250875, 16385];
+      displayChart(d1,d2, 'pie', 'City having highest transactions, y');
+    }
+    if (value === '2') {
+      $('#chartContainer').html('<img class="size" src="/static/img/category.png">')
+    }
+    if (value === '3') {
+      $('#chartContainer').html('<img class="size" src="/static/img/city3.png">')
+    }
+    if (value === '4') {
+      $('#chartContainer').html('<img class="size" src="/static/img/heatmap.png">')
+    }
+    if (value === '5') {
+      $('#chartContainer').html('<img class="size" src="/static/img/hour_trans1.png">')
+    }
+    if (value === '6') {
+      $('#chartContainer').html('<img class="size" src="/static/img/month.png">')
+    }
+    if (value === '7') {
+      $('#chartContainer').html('<img class="size" src="/static/img/month_trend.png">')
+    }
+    if (value === '8') {
+      $('#chartContainer').html('<img class="size" src="/static/img/month_trend_sub.png">')
+    }
+    if (value === '9') {
+      $('#chartContainer').html('<img class="size" src="/static/img/product.png">')
+    }
+  }).change();
 });
