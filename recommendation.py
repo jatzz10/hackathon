@@ -30,6 +30,13 @@ def recommendation():
     print(results[1])
     final = pd.DataFrame(results[1])
 
+    model = NearestNeighbors(metric="jaccard", n_neighbors=20)
+    model.fit(sparse_recommend)
+    results = model.kneighbors(sparse_recommend)
+    print(results[1])
+    final1 = pd.DataFrame(results[1])
+    final = pd.concat([final, final1], axis=1)
+
     print(final)
 
     neighbors = pd.DataFrame()
