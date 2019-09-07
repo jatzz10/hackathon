@@ -1,10 +1,18 @@
 from flask import Flask, request, render_template
 from recommendation import return_neighbors
+from redis import Redis
+
 
 app = Flask(__name__)
+redis = Redis(host='redis', port=6379)
+
+
 
 @app.route('/home')
 def home():
+  redis.rpush("key_local", "hitted")
+  print("here")
+  print("redis is ",redis.lrange("key_local",0,-1))
   return render_template('index.html')
 
 @app.route('/admin')
